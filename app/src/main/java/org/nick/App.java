@@ -110,7 +110,22 @@ public class App {
 		}
 	}
 
+	public void Render(GraphicsObject object) {
+		//TODO:
+	}
+
 	public static void main(String[] args) {
+
+		Texture tex = new Texture("cow.png");
+		Shader shad = new Shader("basic.vsh", "basic.fsh");
+		Material mat = new Material(tex, shad);
+
+		Mesh mesh = new Mesh("cow.obj");
+
+		GraphicsObject obj = new GraphicsObject(mesh, mat);
+
+		System.out.println(obj);
+
 		new App().run();
 	}
 
